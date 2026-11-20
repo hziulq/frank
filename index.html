@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#c0392b" />
+  <title>フランク注文メモ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌭 フランク注文メモ</h1>
+    <div id="summary" class="summary"></div>
+  </header>
+
+  <main>
+    <section class="card new-order">
+      <h2>新しい注文</h2>
+
+      <div class="count-row">
+        <span class="label">本数</span>
+        <button class="step" id="minus" aria-label="1本減らす">−</button>
+        <span id="count" class="count">1</span>
+        <button class="step" id="plus" aria-label="1本増やす">＋</button>
+      </div>
+
+      <div class="bulk">
+        <span class="label">まとめて</span>
+        <button class="chip" data-bulk="both">両方</button>
+        <button class="chip" data-bulk="mustard">マスタードのみ</button>
+        <button class="chip" data-bulk="ketchup">ケチャップのみ</button>
+        <button class="chip" data-bulk="none">なし</button>
+      </div>
+
+      <ol id="items" class="items"></ol>
+
+      <button id="add" class="primary">注文を追加</button>
+    </section>
+
+    <section>
+      <h2 class="list-title">待ちの注文</h2>
+      <div id="orders" class="orders"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden>
+    <span id="toast-msg"></span>
+    <button id="undo">元に戻す</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
